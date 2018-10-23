@@ -1,0 +1,47 @@
+<!--<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>-->
+		<!--这里放内容-->
+		
+		
+		<!--<script src="example1.js" type="text/javascript" charset="utf-8"></script>-->
+		<!--script标签放这里或者放下面-->
+	<!--</body>
+	<script src="example1.js" type="text/javascript" charset="utf-8"></script>
+	
+</html>-->
+
+
+<!DOCTYPE html><!--文档模式 ，如果没有文档类型声明，浏览器默认会开启混杂模式，（另一种模式是标准模式）-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--defer属性-->
+		<!--脚本将延迟到浏览器遇到/html标签后在执行，先于DOMContentLoaded时间执行，只在IE中有用-->
+		<!--第一个脚本先于第二个执行-->	
+		<script src="example1.js" type="text/javascript" defer="defer" charset="utf-8">
+			document.getElementsByTagName("body").style.backgroundColor="red";
+		</script>
+		<script src="expamle2.js" type="text/javascript" charset="utf-8"></script>
+		
+		<!--async只适用于外部脚本文件并告诉浏览器立即下载，但不能保证执行的先后顺序-->
+		<!--目的是不让页面等待该脚本的下载和执行，建议异步脚本不要在加载期间修改DOM-->
+		<!--<script src="example1.js" type="text/javascript" async="async" charset="utf-8"></script>
+		<script src="example2.js" type="text/javascript" async="async" charset="utf-8"></script>-->
+	</head>
+	<body>
+		<!--这里放内容-->
+	</body>
+	
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<!--浏览器会先解析完不使用defer属性的脚本，所以要放到最后-->
+	<script type="text/javascript">
+		$.ajax()
+	</script>
+	
+</html>
